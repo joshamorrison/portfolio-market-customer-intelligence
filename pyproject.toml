@@ -1,0 +1,155 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "market-customer-intelligence"
+version = "1.0.0"
+description = "Unified Intelligence Platform for Customer Feedback and Competitive Market Data Analysis"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Joshua Morrison", email = "joshamorrison@gmail.com"}
+]
+keywords = ["market-intelligence", "customer-feedback", "rag", "langchain", "weaviate", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers", 
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10", 
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.9"
+dependencies = [
+    # Core Dependencies
+    "pandas>=2.0.0",
+    "numpy>=1.21.0", 
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0",
+    "requests>=2.28.0",
+    
+    # AI & LLM Framework
+    "langchain>=0.1.0",
+    "langchain-community>=0.0.20",
+    "langchain-openai>=0.0.8",
+    "langgraph>=0.1.0",
+    "openai>=1.12.0",
+    
+    # Vector Database & RAG
+    "weaviate-client>=4.0.0",
+    "chromadb>=0.4.0",
+    "faiss-cpu>=1.7.0",
+    "sentence-transformers>=2.2.0",
+    
+    # Text Processing & NLP
+    "transformers>=4.36.0",
+    "nltk>=3.8.0",
+    "spacy>=3.7.0",
+    "beautifulsoup4>=4.12.0",
+    
+    # Data Processing
+    "scikit-learn>=1.3.0",
+    "textblob>=0.17.0",
+    
+    # Web Scraping & APIs
+    "scrapy>=2.11.0",
+    "selenium>=4.15.0",
+    "tweepy>=4.14.0",
+    
+    # MCP Integration
+    "mcp>=1.0.0",
+    
+    # API Framework
+    "fastapi>=0.104.1",
+    "uvicorn[standard]>=0.24.0",
+    
+    # Web Interface
+    "streamlit>=1.30.0",
+    
+    # Cloud Integration
+    "boto3>=1.34.0",
+    "s3fs>=2023.12.0",
+    
+    # Visualization
+    "plotly>=5.17.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.12.0",
+    "wordcloud>=1.9.0",
+    
+    # Database
+    "sqlalchemy>=2.0.0",
+    "psycopg2-binary>=2.9.0",
+    
+    # Monitoring & Logging
+    "prometheus-client>=0.19.0",
+    "loguru>=0.7.0",
+    
+    # Utilities
+    "tqdm>=4.66.0",
+    "joblib>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+]
+
+jupyter = [
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+    "ipykernel>=6.25.0",
+]
+
+all = [
+    "market-customer-intelligence[dev,jupyter]"
+]
+
+[project.urls]
+Homepage = "https://github.com/joshamorrison/portfolio-market-customer-intelligence"
+Documentation = "https://github.com/joshamorrison/portfolio-market-customer-intelligence/blob/main/README.md"
+Repository = "https://github.com/joshamorrison/portfolio-market-customer-intelligence.git"
+"Bug Tracker" = "https://github.com/joshamorrison/portfolio-market-customer-intelligence/issues"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+addopts = [
+    "--cov=src",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+ignore_missing_imports = true
