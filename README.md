@@ -1,27 +1,72 @@
 # Market & Customer Intelligence Platform
 
-Unified intelligence platform for customer feedback and competitive market data. Uses RAG with ChromaDB for semantic search and LangGraph/LangChain agents for sentiment tracking, trend detection, and opportunity mapping.
+🧠 **AI-powered intelligence platform** that transforms customer feedback and market data into actionable insights through advanced RAG, semantic search, and multi-agent analysis.
 
-## Key Results
+## ✨ Key Features
+
+- **🔍 Semantic Search**: ChromaDB vector database for intelligent information retrieval
+- **🤖 Multi-Agent Analysis**: LangGraph orchestration for sentiment tracking and trend detection
+- **📊 Real-time Intelligence**: Live data streams with automated alert systems
+- **🎯 Competitive Intelligence**: Feature comparison and market positioning analysis
+- **💡 Opportunity Mapping**: Gap analysis with growth projections and market sizing
+
+## 🚀 Quick Start
+
+**1. Install Dependencies:**
+```bash
+python -m venv .venv
+.venv/Scripts/activate  # Windows
+pip install -r requirements.txt
+```
+
+**2. Configure Environment:**
+```bash
+cp .env.example .env
+# Edit .env with your API keys and data source configurations
+```
+
+**3. Run Demo:**
+```bash
+# Initialize ChromaDB collections
+python -c "from src.data.storage.chromadb_manager import ChromaDBManager; ChromaDBManager().initialize_collections()"
+
+# Start intelligence platform
+python src/main.py --mode realtime
+
+# Launch API server
+uvicorn src.api.main:app --port 8000
+```
+
+**4. Example Result:**
+```
+🧠 Market Intelligence Analysis: Product XYZ
+[SENTIMENT] Overall Score: 0.78 (Positive trending)
+[TRENDS] 15% growth in feature requests (Q4)
+[COMPETITORS] 3 new entrants, pricing pressure detected
+[OPPORTUNITIES] $2.3M TAM gap in enterprise segment
+✅ Intelligence dashboard updated with actionable insights
+```
+
+## 🎯 Business Impact
 - **Real-time insight delivery** across multiple data sources
 - **20% faster GTM decisions** through automated intelligence
 - **15% revenue lift** in targeted markets via competitive analysis
 
-## Technology Stack
-- **Python** - Core platform development
-- **LangChain** - LLM orchestration and prompt engineering
-- **LangGraph** - Multi-agent workflow orchestration
-- **ChromaDB** - Vector database for semantic search
-- **AWS** - Cloud infrastructure and storage
+## 🛠️ Technology Stack
 
-## Features
-- Multi-source data ingestion and processing
-- Vector-based semantic search and retrieval
-- Real-time sentiment analysis and tracking
-- Competitive intelligence and market mapping
-- Automated insight generation and reporting
+- **🐍 Python** - Core platform development and data processing
+- **🤖 LangChain** - LLM orchestration and prompt engineering
+- **🔗 LangGraph** - Multi-agent workflow orchestration  
+- **🗄️ ChromaDB** - Vector database for semantic search and retrieval
+- **☁️ AWS** - Cloud infrastructure and scalable storage
 
-## Project Structure
+## 📖 Documentation
+
+- **[Data Sources](docs/data_sources.md)** - Multi-source integration and ingestion pipelines
+- **[Vector Search](docs/vector_search.md)** - ChromaDB configuration and semantic retrieval
+- **[Agent Workflows](docs/agent_workflows.md)** - LangGraph orchestration and multi-agent analysis
+
+## 📁 Project Structure
 ```
 market-customer-intelligence/
 ├── src/
@@ -73,34 +118,13 @@ market-customer-intelligence/
 └── README.md
 ```
 
-## Setup Instructions
+## 🔧 API Integration
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/joshamorrison/public.git
-   cd public/market-customer-intelligence
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Configure environment**
-   ```bash
-   cp .env.example .env
-   # Edit .env with your configuration
-   ```
-
-4. **Initialize ChromaDB**
-   ```bash
-   python -c "from src.data.storage.chromadb_manager import ChromaDBManager; ChromaDBManager().initialize_collections()"
-   ```
-
-5. **Start the intelligence platform**
-   ```bash
-   python src/main.py --mode realtime
-   ```
+| Interface | Use Case | Access |
+|-----------|----------|---------|
+| **REST API** | Real-time intelligence queries | `http://localhost:8000/docs` |
+| **Python SDK** | Batch processing and analysis | `from src.api import IntelligenceEngine` |
+| **Vector Search** | Semantic similarity queries | ChromaDB direct access |
 
 ## Architecture
 
@@ -136,13 +160,15 @@ market-customer-intelligence/
 - **Market Opportunity**: TAM/SAM analysis with growth projections
 - **Customer Journey**: Touchpoint analysis and optimization recommendations
 
-## Business Impact
+## 💼 Business Applications
 
-This platform enables product and marketing teams to:
-- **Accelerate go-to-market decisions** by 20% through real-time intelligence
-- **Identify market opportunities** with comprehensive competitive analysis
-- **Improve product-market fit** through continuous customer feedback analysis
-- **Drive revenue growth** with 15% lift in targeted market segments
+This intelligence platform enables product and marketing teams to:
+
+- **⚡ Accelerate GTM**: 20% faster go-to-market decisions through real-time intelligence delivery
+- **🎯 Market Opportunities**: Comprehensive competitive analysis and gap identification
+- **📈 Product-Market Fit**: Continuous customer feedback analysis and optimization
+- **💰 Revenue Growth**: 15% lift in targeted market segments through strategic insights
+- **🔍 Competitive Edge**: Real-time monitoring of competitor moves and market trends
 
 ## API Endpoints
 
@@ -165,8 +191,17 @@ GET /api/v1/competitors/{company_id}/analysis
 GET /api/v1/opportunities/{market_segment}
 ```
 
-## Contact
+## 📞 Contact
 
-For technical questions or implementation guidance, reach out to:
-- **Joshua Morrison** - [joshamorrison@gmail.com](mailto:joshamorrison@gmail.com)
-- **LinkedIn** - [linkedin.com/in/joshamorrison](https://www.linkedin.com/in/joshamorrison)
+**Joshua Morrison** - Senior ML Engineer & Data Scientist
+
+- **📧 Email**: [joshamorrison@gmail.com](mailto:joshamorrison@gmail.com)
+- **💼 LinkedIn**: [linkedin.com/in/joshamorrison](https://www.linkedin.com/in/joshamorrison)
+- **🌐 Portfolio**: [joshamorrison.github.io](https://joshamorrison.github.io)
+- **🐙 GitHub**: [github.com/joshamorrison](https://github.com/joshamorrison)
+
+---
+
+**⭐ Found this valuable? Star the repo and connect on LinkedIn!**
+
+*AI-powered intelligence platform - transforming market data into competitive advantage!* 🧠✨
